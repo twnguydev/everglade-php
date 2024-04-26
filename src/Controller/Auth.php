@@ -71,38 +71,53 @@ class Auth extends \Core\Controller
      */
     public function login()
     {
-        $usernameOrEmail = $this->request->post('usernameOrEmail');
-        $password = $this->request->post('password');
-    
-        $existingUser = null;
+        if ($this->request->server('REQUEST_METHOD') === 'POST') {
+            $usernameOrEmail = $this->request->post('usernameOrEmail');
+            $password = $this->request->post('password');
 
-        $existingUserEmail = $this->getModel('User')->findOneBy('user', ['email' => $usernameOrEmail]);
-        if ($existingUserEmail) {
-            $existingUser = $existingUserEmail;
-        }
+            $existingUser = null;
 
-        if (!$existingUser) {
-            $existingUserUsername = $this->getModel('User')->findOneBy('user', ['username' => $usernameOrEmail]);
-            if ($existingUserUsername) {
-                $existingUser = $existingUserUsername;
+            $existingUserEmail = $this->getModel('User')->findOneBy('user', ['email' => $usernameOrEmail]);
+            if ($existingUserEmail) {
+                $existingUser = $existingUserEmail;
             }
-        }
 
-        $login = $this->getModel('User')->checkLogin($existingUser, $password);
+            if (!$existingUser) {
+                $existingUserUsername = $this->getModel('User')->findOneBy('user', ['username' => $usernameOrEmail]);
+                if ($existingUserUsername) {
+                    $existingUser = $existingUserUsername;
+                }
+            }
 
-        if ($login) {
-            $this->request->setSession('user', $existingUser);
-            $this->request->setSession('isUserLoggedIn', true);
+            if (!$existingUser) {
+                echo $this->request->sanitizeJson([
+                    'status' => 'error',
+                    'message' => 'Aucun compte n\'a été trouvé avec cet email ou ce nom d\'utilisateur.'
+                ]);
+                return;
+            }
 
-            echo $this->request->sanitizeJson([
-                'status' => 'success',
-                'message' => 'Vous êtes connecté.',
-                'redirect' => '/'
-            ]);
+            $login = $this->getModel('User')->checkLogin($existingUser, $password);
+
+            if ($login) {
+                $this->request->setSession('user', $existingUser);
+                $this->request->setSession('isUserLoggedIn', true);
+
+                echo $this->request->sanitizeJson([
+                    'status' => 'success',
+                    'message' => 'Vous êtes connecté.',
+                    'redirect' => '/'
+                ]);
+            } else {
+                echo $this->request->sanitizeJson([
+                    'status' => 'error',
+                    'message' => 'Identifiants incorrects.'
+                ]);
+            }
         } else {
             echo $this->request->sanitizeJson([
                 'status' => 'error',
-                'message' => 'Identifiants incorrects.'
+                'message' => 'Une erreur est survenue lors de la connexion.'
             ]);
         }
     }

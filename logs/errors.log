@@ -3088,3 +3088,23 @@ Stack trace:
 #0 [internal function]: Core\Core->Core\{closure}(Object(Error))
 #1 {main}
   thrown in /Applications/MAMP/htdocs/core/Core.php on line 66
+[26-Apr-2024 16:40:22 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Core\Core::Core\{closure}() must be an instance of Exception, instance of TypeError given in /Applications/MAMP/htdocs/core/Core.php:66
+Stack trace:
+#0 [internal function]: Core\Core->Core\{closure}(Object(TypeError))
+#1 {main}
+  thrown in /Applications/MAMP/htdocs/core/Core.php on line 66
+[26-Apr-2024 16:40:25 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Core\Core::Core\{closure}() must be an instance of Exception, instance of TypeError given in /Applications/MAMP/htdocs/core/Core.php:66
+Stack trace:
+#0 [internal function]: Core\Core->Core\{closure}(Object(TypeError))
+#1 {main}
+  thrown in /Applications/MAMP/htdocs/core/Core.php on line 66
+[26-Apr-2024 16:41:41 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Core\Core::Core\{closure}() must be an instance of Exception, instance of TypeError given in /Applications/MAMP/htdocs/core/Core.php:66
+Stack trace:
+#0 [internal function]: Core\Core->Core\{closure}(Object(TypeError))
+#1 {main}
+  thrown in /Applications/MAMP/htdocs/core/Core.php on line 66
+[26-Apr-2024 16:45:54 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Core\Core::Core\{closure}() must be an instance of Exception, instance of TypeError given in /Applications/MAMP/htdocs/core/Core.php:66
+Stack trace:
+#0 [internal function]: Core\Core->Core\{closure}(Object(TypeError))
+#1 {main}
+  thrown in /Applications/MAMP/htdocs/core/Core.php on line 66

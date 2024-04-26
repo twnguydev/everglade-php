@@ -9,6 +9,10 @@ class ORM extends Database
         return str_replace(' ', '', ucwords(str_replace('_', ' ', $tableName)));
     }
 
+    /**
+     * @param string $tableName
+     * @return array of objects
+     */
     public function findOneBy(string $tableName, array $params = []): ?object
     {
         if ($this->getTable($tableName) === null) {
@@ -23,10 +27,6 @@ class ORM extends Database
         $statement->execute($params);
         $result = $statement->fetch(\PDO::FETCH_ASSOC);
 
-        if (!$statement || $result === false) {
-            throw new \Exception('Error while fetching data');
-        }
-
         if ($result === false) {
             return null;
         }
@@ -35,10 +35,6 @@ class ORM extends Database
         $className = Define::NAMESPACES['entities'] . $entityClassName;
     
         $object = new $className();
-
-        if ($object === false) {
-            throw new \Exception(sprintf('Entity %s does not exist', $className));
-        }
 
         foreach ($result as $key => $value) {
             if (property_exists($object, $key)) {
@@ -51,6 +47,10 @@ class ORM extends Database
         return $object;
     }
 
+    /**
+     * @param string $tableName
+     * @return array of objects
+     */
     public function findAll($tableName): array
     {
         if ($this->getTable($tableName) === null) {
@@ -84,6 +84,11 @@ class ORM extends Database
         return $objects;
     }
 
+    /**
+     * @param string $tableName
+     * @param array $params
+     * @return int
+     */
     public function count(string $tableName, array $params = []): int
     {
         if ($this->getTable($tableName) === null) {
@@ -105,6 +110,11 @@ class ORM extends Database
         return (int) $result['COUNT(*)'];
     }
 
+    /**
+     * @param object $object
+     * @param string $tableName
+     * @return bool
+     */
     public function save(string $tableName, object $object): bool
     {
         if ($this->getTable($tableName) === null) {
@@ -142,6 +152,10 @@ class ORM extends Database
         return $statement->execute($values);
     }
 
+    /**
+     * @param array|object $params
+     * @return bool
+     */
     public function update(string $tableName, $params = []): bool
     {
         if (!is_array($params) && !is_object($params)) {
@@ -171,6 +185,11 @@ class ORM extends Database
         return $statement->execute($params);
     }
 
+    /**
+     * @param string $tableName
+     * @param array $params
+     * @return bool
+     */
     public function delete(string $tableName, array $params = []): bool
     {
         if ($this->getTable($tableName) === null) {
@@ -184,6 +203,11 @@ class ORM extends Database
         return $statement->execute($params);
     }
 
+    /**
+     * @param string $tableName
+     * @param array $params
+     * @return array
+     */
     public function read(string $tableName, array $params = []): array
     {
         if ($this->getTable($tableName) === null) {
