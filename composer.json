@@ -1,0 +1,23 @@
+{
+    "name": "evergladephp/everglade-php",
+    "description": "A simple PHP framework for building web applications.",
+    "type": "framework",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tanguy Gibrat",
+            "email": "tanguy.gibrat@epitech.eu"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "EvergladePHP\\": "src/"
+        },
+        "files": ["core/autoload.php"]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
