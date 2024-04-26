@@ -10,14 +10,13 @@
         }
     ],
     "require": {
-        "php": ">=7.0"
+        "php": ">=7.0",
+        "twnguydev/everglade-php": "^1.0"
     },
     "autoload": {
         "psr-4": {
             "EvergladePHP\\": "src/"
         },
         "files": ["core/autoload.php"]
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
