@@ -41,4 +41,4 @@ EvergladePHP is open-source software licensed under the MIT License. See the [LI
 You can install EvergladePHP using Composer:
 
 ```bash
-composer create-project evergladephp/everglade-php myproject
+composer create-project twnguydev/everglade-php myproject
