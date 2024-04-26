@@ -73,6 +73,11 @@ class Database
     public function executeSQL(string $file): void
     {
         $content = file_get_contents($file);
+
+        if (file_exists(Define::DIRECTORIES['migrations'] . 'get_started.sql')) {
+            $content .= file_get_contents(Define::DIRECTORIES['migrations'] . 'get_started.sql');
+        }
+
         $conn = $this->getConnection();
 
         $conn->setAttribute(\PDO::ATTR_EMULATE_PREPARES, 0);

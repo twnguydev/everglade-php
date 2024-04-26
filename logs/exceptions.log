@@ -130,3 +130,13 @@ CREATE TABLE IF NOT EXISTS `movie_genre` (`id` integer AUTO_INCREMENT NOT NULL' 
 [26-Apr-2024 13:28:13 Europe/Paris] Exception : Property App\Entity\Movie::$0 does not exist. File : /Applications/MAMP/htdocs/core/Core.php line 47
 [26-Apr-2024 13:28:31 Europe/Paris] Exception : Property App\Entity\Movie::$0 does not exist. File : /Applications/MAMP/htdocs/core/Core.php line 47
 [26-Apr-2024 14:31:57 Europe/Paris] Exception : Migrations directory not found: /Applications/MAMP/htdocs/core/../migrations/. File : /Applications/MAMP/htdocs/core/Core.php line 47
+[26-Apr-2024 18:54:49 Europe/Paris] Exception : Table user does not exist. File : /Applications/MAMP/htdocs/core/Core.php line 47
+[26-Apr-2024 18:56:32 Europe/Paris] Exception : Table user does not exist. File : /Applications/MAMP/htdocs/core/Core.php line 47
+[26-Apr-2024 18:57:45 Europe/Paris] Exception : Table user does not exist. File : /Applications/MAMP/htdocs/core/Core.php line 47
+[26-Apr-2024 18:57:47 Europe/Paris] Exception : Table user does not exist. File : /Applications/MAMP/htdocs/core/Core.php line 47
+[26-Apr-2024 18:57:48 Europe/Paris] Exception : Table user does not exist. File : /Applications/MAMP/htdocs/core/Core.php line 47
+[26-Apr-2024 18:57:48 Europe/Paris] Exception : Table user does not exist. File : /Applications/MAMP/htdocs/core/Core.php line 47
+[26-Apr-2024 18:57:49 Europe/Paris] Exception : Table user does not exist. File : /Applications/MAMP/htdocs/core/Core.php line 47
+[26-Apr-2024 18:57:49 Europe/Paris] Exception : Table user does not exist. File : /Applications/MAMP/htdocs/core/Core.php line 47
+[26-Apr-2024 19:04:28 Europe/Paris] Exception : The requested route has no match. File : /Applications/MAMP/htdocs/core/Core.php line 47
+[26-Apr-2024 19:08:32 Europe/Paris] Exception : Table user does not exist. File : /Applications/MAMP/htdocs/core/Core.php line 47

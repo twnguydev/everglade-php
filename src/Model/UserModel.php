@@ -61,6 +61,8 @@ class UserModel extends ORM
             $request->setCookie('token', $token, 3600 * 24 * 7);
             $request->setCookie('user_id', $userObject->getId(), 3600 * 24 * 7);
             $request->setCookie('username', $userObject->getUsername(), 3600 * 24 * 7);
+            $request->setSession('user', $userObject);
+            $request->setSession('isUserLoggedIn', true);
             return $this->update('user', $userObject);
         }
 

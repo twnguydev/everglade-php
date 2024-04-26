@@ -5,12 +5,14 @@ namespace Core;
 class Router
 {
     private Request $request;
+    private Database $database;
     protected static $_render;
     public array $routes = [];
 
     public function __construct()
     {
         $this->request = new Request();
+        $this->database = new Database();
     }
 
     public function addRoute(string $pattern, string $action, string $controller, string $method, ?string $component = null, ?string $middleware = null): void
@@ -82,9 +84,11 @@ class Router
                             $handle = $middleware->handle('protectedRoute');
                         }
                     } else {
-                        $middlewareClass = Define::NAMESPACES['middlewares'] . 'Auth';
-                        $middleware = new $middlewareClass();
-                        $handle = $middleware->handle();
+                        if ($this->database->getTable('user')) {
+                            $middlewareClass = Define::NAMESPACES['middlewares'] . 'Auth';
+                            $middleware = new $middlewareClass();
+                            $handle = $middleware->handle();
+                        }
                     }
 
                     $params = $this->extractParams($action, $controller, $matches);
