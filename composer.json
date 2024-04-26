@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "EvergladePHP\\": "src/"
+            "EvergladePHP\\": "vendor/twnguydev/everglade-php/src/"
         },
         "files": ["core/autoload.php"]
     },
