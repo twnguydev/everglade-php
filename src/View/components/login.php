@@ -54,4 +54,4 @@
         </div>
     </div>
 </div>
-<script src="/public/js/login.js"></script>
+<script src="/myapp/public/js/login.js"></script>

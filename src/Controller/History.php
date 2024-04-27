@@ -40,7 +40,7 @@ class History extends \Core\Controller
                     echo $this->request->sanitizeJson([
                         'status' => 'success',
                         'message' => 'Movie added to history',
-                        'redirect' => '/movie'
+                        'redirect' => '/myapp/movie'
                     ]);
                 } else {
                     echo $this->request->sanitizeJson([

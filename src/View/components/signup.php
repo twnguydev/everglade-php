@@ -112,4 +112,4 @@
         </div>
     </div>
 </div>
-<script src="/public/js/signup.js"></script>
+<script src="/myapp/public/js/signup.js"></script>

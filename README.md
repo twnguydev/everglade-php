@@ -22,7 +22,7 @@ EvergladePHP is a lightweight PHP framework designed to simplify web development
 ## Getting Started
 
 After installation, you can start building your web application by creating controllers, views, and routes.
-EvergladePHP comes with an example application—a mini cinema application—to demonstrate real-world usage and facilitate developer onboarding.
+EvergladePHP comes with an example application—a mini cinema application—to demonstrate real-world usage and facilitate developer onboarding. This mini-app demonstration require to start the installation with `myapp` as the name of project.
 
 ## Documentation
 
@@ -41,4 +41,4 @@ EvergladePHP is open-source software licensed under the MIT License. See the [LI
 You can install EvergladePHP using Composer:
 
 ```bash
-composer create-project twnguydev/everglade-php myproject
+composer create-project twnguydev/everglade-php myapp

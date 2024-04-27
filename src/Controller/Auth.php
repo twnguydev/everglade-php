@@ -58,7 +58,7 @@ class Auth extends \Core\Controller
             $this->request->unsetSession('user');
             $this->request->unsetSession('isUserLoggedIn');
 
-            $this->request->redirect('/auth');
+            $this->request->redirect('/myapp/auth');
         }
 
         return [];
@@ -106,7 +106,7 @@ class Auth extends \Core\Controller
                 echo $this->request->sanitizeJson([
                     'status' => 'success',
                     'message' => 'Vous êtes connecté.',
-                    'redirect' => '/'
+                    'redirect' => '/myapp/'
                 ]);
             } else {
                 echo $this->request->sanitizeJson([
@@ -173,7 +173,7 @@ class Auth extends \Core\Controller
                     echo $this->request->sanitizeJson([
                         'status' => 'success',
                         'message' => 'Votre compte a été créé avec succès.',
-                        'redirect' => '/auth'
+                        'redirect' => '/myapp/auth'
                     ]);
                 }
             } else {

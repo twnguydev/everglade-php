@@ -5,7 +5,7 @@
                 <p class="max-w-md mx-auto mt-4 text-gray-500 dark:text-gray-400">Banque mondiale d'avis de films en ligne</p>
 
                 <div class="flex flex-col mt-4 sm:flex-row sm:items-center sm:justify-center">
-                    <button class="w-full px-5 py-2 text-sm tracking-wide text-white transition-colors duration-300 transform bg-blue-600 rounded-md sm:mx-2 sm:order-2 sm:w-auto hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">Commencer maintenant</button>
+                    <a href="/myapp/auth" class="w-full px-5 py-2 text-sm tracking-wide text-white transition-colors duration-300 transform bg-blue-600 rounded-md sm:mx-2 sm:order-2 sm:w-auto hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">Commencer maintenant</a>
                 </div>
             </div>
 

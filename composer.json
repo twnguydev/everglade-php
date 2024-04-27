@@ -18,11 +18,6 @@
         },
         "files": ["core/autoload.php"]
     },
-    "scripts": {
-        "post-create-project-cmd": [
-            "php core/set_folder_env.php \"$COMPOSER_PACKAGE_NAME\""
-        ]
-    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }

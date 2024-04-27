@@ -5,7 +5,7 @@
                 <img class="w-full" src="https://images.unsplash.com/photo-1605379399642-870262d3d051?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80" alt="" />
             </div>
             <div class="flex justify-center px-5 -mt-12">
-                <img class="h-32 w-32 bg-white p-2 rounded-full" src="/public/img/profile-img.webp" alt="" />
+                <img class="h-32 w-32 bg-white p-2 rounded-full" src="/myapp/public/img/profile-img.webp" alt="" />
             </div>
             <div class="text-black">
                 <div class="text-center px-14">
@@ -21,7 +21,7 @@
                     </div>
                     <div class="border"></div>
                     <div class="text-center w-1/2 p-4 hover:bg-gray-100 cursor-pointer">
-                        <a href="/auth/logout">
+                        <a href="/myapp/auth/logout">
                             <p><span class="font-semibold">Se déconnecter</span></p>
                         </a>
                     </div>
@@ -125,5 +125,5 @@
     </div>
 </div>
 
-<script src="/public/js/modal.js"></script>
-<script src="/public/js/profile.js"></script>
+<script src="/myapp/public/js/modal.js"></script>
+<script src="/myapp/public/js/profile.js"></script>

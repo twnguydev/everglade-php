@@ -43,11 +43,11 @@ class Auth
         $user = $this->controller->getModel('User')->findOneBy('user', ['id' => $userId, 'token' => $token, 'username' => $username]);
 
         if (!$user && $method === 'protectedRoute') {
-            $this->request->redirect('/auth');
+            $this->request->redirect('/myapp/auth');
             return false;
         }
         if ((!$user || $user->getRole() !== 'ROLE_ADMIN') && $method === 'protectedRouteAdmin') {
-            $this->request->redirect('/');
+            $this->request->redirect('/myapp/');
             return false;
         }
         if (!$user) {

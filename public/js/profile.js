@@ -48,7 +48,7 @@ $(document).ready(function () {
 
             $.ajax({
                 type: "POST",
-                url: `/user/${id}/update`,
+                url: `/myapp/user/${id}/update`,
                 data: formData,
                 success: function (response) {
                     $("#error-box").css('display', 'none');

@@ -1,3 +1,5 @@
+/* COULD DELETE THIS FILE ONCE YOU HAVE FINISHED WORKING WITH DEMO */
+
 INSERT INTO `history` (`id`, `id_movie`, `id_user`, `date`) VALUES
 (1, 3, 1, '2024-04-26 13:44:07'),
 (2, 2, 1, '2024-04-26 13:51:09'),

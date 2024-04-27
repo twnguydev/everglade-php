@@ -2,7 +2,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 bg-black p-8">
         {# foreach (movies as key => value) #}
             <div class="w-full max-w-sm bg-black border border-gray-200 rounded-lg shadow">
-                <img class="rounded-t-lg mb-3" src="/public/img/image.png" alt="product image" />
+                <img class="rounded-t-lg mb-3" src="/myapp/public/img/image.png" alt="product image" />
                 <div class="px-5 pb-5">
                     <h5 class="text-xl font-semibold tracking-tight text-white">{echo_var=title}</h5>
                     <span class="text-sm font-semibold text-gray-200 dark:text-gray-600">Réalisateur: {echo_var=director}</span><br>
@@ -17,4 +17,4 @@
         {# endforeach #}
     </div>
 </div>
-<script src="/public/js/movie.js"></script>
+<script src="/myapp/public/js/movie.js"></script>
