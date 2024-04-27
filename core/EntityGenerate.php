@@ -100,12 +100,20 @@ class EntityGenerate
                                     (isset($property['default']) ? " DEFAULT {$property['default']}" : '');
                 }
             }
-    
+
             foreach ($existingColumnsIndexed as $columnName => $position) {
                 $sqlChanges[] = "DROP COLUMN `$columnName`";
             }
     
             $sql .= implode(", ", $sqlChanges) . ";";
+
+            $primaryKey = array_filter($properties, function($property) {
+                return isset($property['primary']);
+            });
+    
+            if (!empty($primaryKey)) {
+                $sql .= "PRIMARY KEY (`id`)";
+            }
         } else {
             $sql = "CREATE TABLE IF NOT EXISTS `$tableName` (";
     

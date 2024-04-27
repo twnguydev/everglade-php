@@ -14,9 +14,14 @@
     },
     "autoload": {
         "psr-4": {
-            "EvergladePHP\\": "vendor/twnguydev/everglade-php/src/"
+            "EvergladePHP\\": "src/"
         },
         "files": ["core/autoload.php"]
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "php core/set_env.php \"$COMPOSER_PACKAGE_NAME\""
+        ]
     },
     "minimum-stability": "dev",
     "prefer-stable": true

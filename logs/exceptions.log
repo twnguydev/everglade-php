@@ -140,3 +140,12 @@ CREATE TABLE IF NOT EXISTS `movie_genre` (`id` integer AUTO_INCREMENT NOT NULL' 
 [26-Apr-2024 18:57:49 Europe/Paris] Exception : Table user does not exist. File : /Applications/MAMP/htdocs/core/Core.php line 47
 [26-Apr-2024 19:04:28 Europe/Paris] Exception : The requested route has no match. File : /Applications/MAMP/htdocs/core/Core.php line 47
 [26-Apr-2024 19:08:32 Europe/Paris] Exception : Table user does not exist. File : /Applications/MAMP/htdocs/core/Core.php line 47
+[27-Apr-2024 10:05:55 Europe/Paris] Exception : The requested route has no match. File : /Applications/MAMP/htdocs/myapp/core/Core.php line 47
+[27-Apr-2024 10:08:11 Europe/Paris] Exception : Error executing SQL command: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'PRIMARY'. File: /Applications/MAMP/htdocs/myapp/core/../migration//2024-04-27-08-08-11.sql. File : /Applications/MAMP/htdocs/myapp/core/Core.php line 47
+[27-Apr-2024 10:12:15 Europe/Paris] Exception : Error executing SQL command: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'PRIMARY KEY (`id`)MODIFY COLUMN `id` integer AUTO_INCREMENT NOT NULL, MODIFY COL' at line 1. File: /Applications/MAMP/htdocs/myapp/core/../migration//2024-04-27-08-12-15.sql. File : /Applications/MAMP/htdocs/myapp/core/Core.php line 47
+[27-Apr-2024 10:13:11 Europe/Paris] Exception : Error executing SQL command: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'PRIMARY KEY (`id`)
+ALTER TABLE `movie` MODIFY COLUMN `id` integer AUTO_INCREMENT' at line 1. File: /Applications/MAMP/htdocs/myapp/core/../migration//2024-04-27-08-13-11.sql. File : /Applications/MAMP/htdocs/myapp/core/Core.php line 47
+[27-Apr-2024 10:13:12 Europe/Paris] Exception : The requested route has no match. File : /Applications/MAMP/htdocs/myapp/core/Core.php line 47
+[27-Apr-2024 10:15:08 Europe/Paris] Exception : The requested route has no match. File : /Applications/MAMP/htdocs/myapp/core/Core.php line 47
+[27-Apr-2024 10:26:39 Europe/Paris] Exception : The requested route has no match. File : /Applications/MAMP/htdocs/myapp/core/Core.php line 47
+[27-Apr-2024 10:27:45 Europe/Paris] Exception : The requested route has no match. File : /Applications/MAMP/htdocs/myapp/core/Core.php line 47

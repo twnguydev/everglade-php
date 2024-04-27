@@ -61,6 +61,12 @@ class Router
         $method = $this->request->server('REQUEST_METHOD');
         $routeMatched = false;
 
+        $segments = explode('/', ltrim($uri, '/'));
+        $firstFolder = '/' . $segments[0];
+
+        $basePath = dirname($this->request->server('SCRIPT_NAME'));
+        $uri = str_replace($firstFolder, '', $uri);
+
         foreach ($this->routes as $pattern => $route) {
             if (preg_match("#^$pattern$#", $uri, $matches) && $route['method'] === $method) {
                 array_shift($matches);
