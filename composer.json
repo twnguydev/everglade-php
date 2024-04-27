@@ -20,7 +20,7 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "php core/set_env.php \"$COMPOSER_PACKAGE_NAME\""
+            "php core/set_folder_env.php \"$COMPOSER_PACKAGE_NAME\""
         ]
     },
     "minimum-stability": "dev",
