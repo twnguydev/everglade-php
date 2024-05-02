@@ -25,12 +25,12 @@ $(document).ready(function () {
 
             $.ajax({
                 type: "POST",
-                url: "/myapp/auth/signup/register",
+                url: "/auth/signup/register",
                 data: formData,
                 success: function (response) {
                     $("#error-box").css('display', 'none');
                     $("#error-message").text('');
-                
+
                     let errorMessage;
                     try {
                         if (response.status === 'error') {
@@ -44,7 +44,7 @@ $(document).ready(function () {
                     } catch (e) {
                         console.error("Erreur lors du traitement de la réponse JSON :", e);
                     }
-                },                
+                },
                 error: function (xhr, status, error) {
                     $("#error-box").css('display', 'none');
                     $("#error-message").text("");
@@ -131,7 +131,7 @@ $(document).ready(function () {
 
     function checkPasswords(password, confirmPassword) {
         return password !== "" && confirmPassword !== "" &&
-            password.length > 8 && confirmPassword.length > 8 && 
+            password.length > 8 && confirmPassword.length > 8 &&
             password === confirmPassword;
     }
 });

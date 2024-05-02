@@ -7,7 +7,7 @@ $(document).ready(function () {
         let dataId = $(this).data('id');
 
         $.ajax({
-            url: `/myapp/history/${userId}/add`,
+            url: `/history/${userId}/add`,
             type: 'POST',
             data: { dataId: dataId },
             success: function (response) {

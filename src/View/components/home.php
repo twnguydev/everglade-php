@@ -16,7 +16,7 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 bg-black p-8">
         <div class="w-full max-w-sm bg-black border border-gray-200 rounded-lg shadow">
-            <img class="rounded-t-lg mb-3" src="/myapp/public/img/image.png" alt="product image" />
+            <img class="rounded-t-lg mb-3" src="/public/img/image.png" alt="product image" />
             <div class="px-5 pb-5">
                 <h5 class="text-xl font-semibold tracking-tight text-white">Batman: The Animated Series (1992)</h5>
                 <div class="flex items-center mt-2.5 mb-5">
@@ -47,7 +47,7 @@
         </div>
         <div class="w-full max-w-sm bg-black border border-gray-200 rounded-lg shadow">
             <a href="#">
-                <img class="rounded-t-lg mb-3" src="/myapp/public/img/image.png" alt="product image" />
+                <img class="rounded-t-lg mb-3" src="/public/img/image.png" alt="product image" />
             </a>
             <div class="px-5 pb-5">
                 <a href="#">
@@ -81,7 +81,7 @@
         </div>
         <div class="w-full max-w-sm bg-black border border-gray-200 rounded-lg shadow">
             <a href="#">
-                <img class="rounded-t-lg mb-3" src="/myapp/public/img/image.png" alt="product image" />
+                <img class="rounded-t-lg mb-3" src="/public/img/image.png" alt="product image" />
             </a>
             <div class="px-5 pb-5">
                 <a href="#">
@@ -115,7 +115,7 @@
         </div>
         <div class="w-full max-w-sm bg-black border border-gray-200 rounded-lg shadow">
             <a href="#">
-                <img class="rounded-t-lg mb-3" src="/myapp/public/img/image.png" alt="product image" />
+                <img class="rounded-t-lg mb-3" src="/public/img/image.png" alt="product image" />
             </a>
             <div class="px-5 pb-5">
                 <a href="#">

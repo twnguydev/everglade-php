@@ -14,7 +14,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: "POST",
-            url: "/myapp/auth/login/register",
+            url: "/auth/login/register",
             data: formData,
             success: function (response) {
                 $("#error-box").css('display', 'none');

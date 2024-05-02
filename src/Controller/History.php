@@ -22,7 +22,7 @@ class History extends \Core\Controller
     public function historyAction(int $id)
     {
         date_default_timezone_set('Europe/Paris');
-        
+
         if ($this->request->server('REQUEST_METHOD') === 'POST') {
             $movieId = $this->request->post('dataId');
             $userId = $this->request->getSession('user')->getId();
@@ -40,7 +40,7 @@ class History extends \Core\Controller
                     echo $this->request->sanitizeJson([
                         'status' => 'success',
                         'message' => 'Movie added to history',
-                        'redirect' => '/myapp/movie'
+                        'redirect' => '/movie'
                     ]);
                 } else {
                     echo $this->request->sanitizeJson([

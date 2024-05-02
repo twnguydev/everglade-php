@@ -28,7 +28,7 @@ class User extends \Core\Controller
         $user = $this->getModel('User')->findOneBy('user', ['id' => $id]);
 
         if (!$user) {
-            $this->redirect('/myapp/404');
+            $this->redirect('/404');
         }
 
         $history = $this->getModel('History')->findAll('history', ['id_user' => $id]);
@@ -142,7 +142,7 @@ class User extends \Core\Controller
                     echo $this->request->sanitizeJson([
                         'status' => 'success',
                         'message' => 'Votre compte a été modifié avec succès.',
-                        'redirect' => '/myapp/user/' . $id
+                        'redirect' => '/user/' . $id
                     ]);
                 } else {
                     echo $this->request->sanitizeJson([

@@ -21,8 +21,9 @@ EvergladePHP is a lightweight PHP framework designed to simplify web development
 
 ## Getting Started
 
-After installation, you can start building your web application by creating controllers, views, and routes.
-EvergladePHP comes with an example application—a mini cinema application—to demonstrate real-world usage and facilitate developer onboarding. This mini-app demonstration requires to start the installation with `myapp` as the name of project.
+After installation, you can begin constructing your web application by crafting controllers, views, and routes. EvergladePHP includes an exemplary application—a miniature cinema application—to showcase real-world usage and streamline developer onboarding.
+
+**This demonstration necessitates placing all project folders and files at the root of your server.**
 
 ## Documentation
 
