@@ -77,43 +77,45 @@ class EntityGenerate
         if ($this->db->getTable($tableName)) {
             $existingColumns = $this->db->getColumns($tableName);
             $existingColumnsIndexed = array_flip($existingColumns);
-    
+            
             $sql = "ALTER TABLE `$tableName` ";
             $sqlChanges = [];
-    
+            
             foreach ($properties as $property) {
                 $columnName = $property['name'];
-    
+            
                 if (isset($existingColumnsIndexed[$columnName])) {
                     unset($existingColumnsIndexed[$columnName]);
-    
+            
                     $sqlChanges[] = "MODIFY COLUMN `$columnName` {$property['type']}" . 
                                     ($property['length'] && $property['type'] === 'VARCHAR' ? "({$property['length']})" : '') .
                                     (isset($property['autoincrement']) ? ' AUTO_INCREMENT' : '') .
                                     (isset($property['nullable']) && $property['nullable'] === 'NOT NULL' ? ' NOT NULL' : '') .
-                                    (isset($property['default']) ? " DEFAULT {$property['default']}" : '');
+                                    (isset($property['default']) ? " DEFAULT '{$property['default']}'" : '');
                 } else {
                     $sqlChanges[] = "ADD COLUMN `$columnName` {$property['type']}" . 
                                     ($property['length'] && $property['type'] === 'VARCHAR' ? "({$property['length']})" : '') .
                                     (isset($property['autoincrement']) ? ' AUTO_INCREMENT' : '') .
                                     (isset($property['nullable']) && $property['nullable'] === 'NOT NULL' ? ' NOT NULL' : '') .
-                                    (isset($property['default']) ? " DEFAULT {$property['default']}" : '');
+                                    (isset($property['default']) ? " DEFAULT '{$property['default']}'" : '');
                 }
             }
-
+            
             foreach ($existingColumnsIndexed as $columnName => $position) {
                 $sqlChanges[] = "DROP COLUMN `$columnName`";
             }
-    
-            $sql .= implode(", ", $sqlChanges) . ";";
-
+            
+            $sql .= implode(", ", $sqlChanges);
+            
             $primaryKey = array_filter($properties, function($property) {
                 return isset($property['primary']);
             });
-    
+            
             if (!empty($primaryKey)) {
-                $sql .= "PRIMARY KEY (`id`)";
+                $sql .= ", PRIMARY KEY (`id`)";
             }
+            
+            $sql .= ";";            
         } else {
             $sql = "CREATE TABLE IF NOT EXISTS `$tableName` (";
     
