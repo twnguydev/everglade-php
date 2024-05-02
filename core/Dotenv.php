@@ -26,6 +26,17 @@ class Dotenv
 
     public function get(string $key)
     {
-        return $this->variables[$key];
+        return $this->variables[$key] ?? null;
+    }
+
+    public function handle(string $filePath)
+    {
+        $this->load($filePath);
+
+        foreach ($this->variables as $key => $value) {
+            if ($value === "") {
+                throw new \Exception("$key is not defined in the .env file");
+            }
+        }
     }
 }

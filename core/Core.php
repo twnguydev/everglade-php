@@ -10,35 +10,39 @@ class Core
     public Controller $controller;
     public Configuration $configuration;
     public EntityGenerate $entity;
-    private Request $request;
+    private Dotenv $dotenv;
 
     public function __construct()
     {
+        $this->configuration = new Configuration();
+
+        if ($this->configuration->getDebugMode()) {
+            $this->handleErrors();
+        }
+
+        $this->dotenv = new Dotenv(Define::ENV_FILE);
+        $this->dotenv->handle(Define::ENV_FILE);
+
         $this->router = new Router();
         $this->controller = new Controller();
-        $this->configuration = new Configuration();
         $this->entity = new EntityGenerate();
-        $this->request = new Request();
     }
 
     public function run()
     {
         try {
             $routerMode = $this->configuration->getRouterMode();
-            $debugMode = $this->configuration->getDebugMode();
-
-            if ($debugMode) {
-                $this->handleErrors();
-            }
 
             if ($routerMode === 'hybrid') {
                 $this->entity->generateAllSql();
                 $this->controller->classRequest($this->router);
                 $this->router->routeRequest();
             } elseif ($routerMode === 'static') {
+                $this->entity->generateAllSql();
                 include_once Define::ROUTES_FILE;
                 $this->router->routeRequest();
             } elseif ($routerMode === 'dynamic') {
+                $this->entity->generateAllSql();
                 $this->router->dynamicRouteRequest();
             } else {
                 throw new \Exception('Invalid router mode');

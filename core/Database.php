@@ -16,14 +16,11 @@ class Database
     public function __construct()
     {
         $this->dotenv = new Dotenv(Define::ENV_FILE);
-
         $this->host = $this->dotenv->get('DB_HOST');
         $this->db_name = $this->dotenv->get('DB_NAME');
         $this->user = $this->dotenv->get('DB_USER');
         $this->password = $this->dotenv->get('DB_PASSWORD');
         $this->charset = $this->dotenv->get('DB_CHARSET');
-
-        $this->handleErrors();
     }
 
     public function getTable(string $table): ?string
@@ -94,25 +91,6 @@ class Database
         } catch (\PDOException $e) {
             $conn->rollBack();
             throw new \Exception("Error executing SQL command: " . $e->getMessage() . ". File: $file");
-        }
-    }
-
-    private function handleErrors()
-    {
-        if ($this->host === '') {
-            throw new \Exception('DB_HOST is not defined in the .env file');
-        }
-        if ($this->db_name === '') {
-            throw new \Exception('DB_NAME is not defined in the .env file');
-        }
-        if ($this->user === '') {
-            throw new \Exception('DB_USER is not defined in the .env file');
-        }
-        if ($this->password === '') {
-            throw new \Exception('DB_PASSWORD is not defined in the .env file');
-        }
-        if ($this->charset === '') {
-            throw new \Exception('DB_CHARSET is not defined in the .env file');
         }
     }
 }

@@ -152,17 +152,29 @@ class Router
             $uri = filter_var($uri, FILTER_SANITIZE_URL);
             $uri = explode('?', $uri)[0];
             $uriParts = explode('/', $uri);
-    
-            $controllerName = ucfirst($uriParts[1] ?? 'Home');
-            $action = $uriParts[2] ?? $uriParts[1];
-    
-            if ($uriParts[1] === 'admin') {
-                $controllerClass = Define::NAMESPACES['controllers'] . 'Admin\\' . $controllerName;
-            } elseif ($uriParts[1] === 'auth') {
-                $action = 'login';
-                $controllerClass = Define::NAMESPACES['controllers'] . 'Auth';
+        
+            if (isset($uriParts[1])) {
+                $controllerName = ucfirst($uriParts[1]);
+                $action = $uriParts[2] ?? $uriParts[1];
+        
+                if ($uriParts[1] === 'admin') {
+                    $controllerClass = Define::NAMESPACES['controllers'] . 'Admin\\' . $controllerName;
+                } elseif ($uriParts[1] === 'auth') {
+                    if (isset($uriParts[2])) {
+                        if ($uriParts[2] === 'signup' || $uriParts[2] === 'logout') {
+                            $action = $uriParts[2];
+                        } else {
+                            throw new \Exception("Action not found: {$uriParts[2]}, in controller: \\App\\Controller\\Auth.");
+                        }
+                    } else {
+                        $action = 'login';
+                    }
+                    $controllerClass = Define::NAMESPACES['controllers'] . 'Auth';
+                } else {
+                    $controllerClass = Define::NAMESPACES['controllers'] . $controllerName;
+                }
             } else {
-                $controllerClass = Define::NAMESPACES['controllers'] . $controllerName;
+                throw new \Exception("Controller not found.");
             }
         }
     
