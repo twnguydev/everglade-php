@@ -11,7 +11,7 @@ class ORM extends Database
 
     /**
      * @param string $tableName
-     * @return array of objects
+     * @return object|null
      */
     public function findOneBy(string $tableName, array $params = []): ?object
     {

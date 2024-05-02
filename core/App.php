@@ -31,7 +31,7 @@ class App
         $this->handleErrors();
     }
 
-    public function handleErrors()
+    private function handleErrors()
     {
         if ($this->name === '') {
             throw new \Exception('APP_NAME is not defined in the .env file');

@@ -23,6 +23,8 @@ class Mail
         $this->password = $this->dotenv->get('MAIL_PASSWORD');
         $this->from = $this->dotenv->get('MAIL_FROM');
         $this->fromName = $this->dotenv->get('MAIL_FROM_NAME');
+
+        $this->handleErrors();
     }
 
     public function getHost(): string
@@ -73,5 +75,27 @@ class Mail
         $success = mail($to, $subject, $body, implode("\r\n", $headers));
 
         return $success;
+    }
+
+    private function handleErrors()
+    {
+        if ($this->host === '') {
+            throw new \Exception('MAIL_HOST is not defined in the .env file');
+        }
+        if ($this->port === '') {
+            throw new \Exception('MAIL_PORT is not defined in the .env file');
+        }
+        if ($this->username === '') {
+            throw new \Exception('MAIL_USERNAME is not defined in the .env file');
+        }
+        if ($this->password === '') {
+            throw new \Exception('MAIL_PASSWORD is not defined in the .env file');
+        }
+        if ($this->from === '') {
+            throw new \Exception('MAIL_FROM is not defined in the .env file');
+        }
+        if ($this->fromName === '') {
+            throw new \Exception('MAIL_FROM_NAME is not defined in the .env file');
+        }
     }
 }
