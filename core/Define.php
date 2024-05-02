@@ -4,7 +4,7 @@ namespace Core;
 
 class Define
 {
-    public const ENV_FILE = __DIR__ . '/../config.env';
+    public const ENV_FILE = __DIR__ . '/../.env';
     public const ROUTES_FILE = __DIR__ . '/../src/routes.php';
     public const LAYOUT_FILE = __DIR__ . '/../src/View/app.php';
     public const DATABASE_FILE = __DIR__ . '/../database.sql';
